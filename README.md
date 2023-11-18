@@ -4,5 +4,8 @@ A weather dashboard web app for users to view weather outlook for multiple citie
 ## Link
 ## Preview
 screenshots
+
+## Technologies Used
+
 ## License
 Please refer to the LICENSE in the repo.
