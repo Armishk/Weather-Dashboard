@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    
+      <nav class="navbar text-left bg-primary text-white">
+        <h1 class="navbar">The Weather Dashboard</h1>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 mt-3 bg-dark">
+                <p class="mt-4 text-white">Search for a City:</p>
+                <div class="input-group mb-3">
+                    <input id="enter-city" type="text" class="form-control" placeholder="Enter a city" aria-label="Enter a city">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="history"></div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row mr-0">
+                    <div class="col-lg-8 card m-3 d-none bg-dark text-white rounded-0" id="today-weather">
+                        <div class="main-body">
+                            <h2 id="city-name" class="city-name"></h2>
+                            <img id="current-icon" alt="">
+                            <p id="temp"></p>
+                            <p id="humidity"></p>
+                            <p id="wind"></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-none" id="5-day-header">
+                    <div class="col-12">
+                        <h3>5-Day Forecast</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 forecast bg-primary text-white m-2"></div>
+                    <div class="col-md-2 forecast bg-dark text-white m-2"></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 "></div>
+                    <div class="col-md-2 forecast bg-dark text-white m-2 "></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 "></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        initPage();
+    </script>
 </body>
 </html>
