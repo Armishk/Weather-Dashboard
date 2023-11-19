@@ -36,7 +36,7 @@
                 var weatherPic = response.data.weather[0].icon;
                 currentPicEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherPic + "@4x.png");
                 currentPicEl.setAttribute("alt", response.data.weather[0].description);
-                currentTempEl.textContent = "Temperature: " + k2f(response.data.main.temp) + " &#176F";
+                currentTempEl.innerHTML = "Temperature: " + k2f(response.data.main.temp) + " &#176F";
                 currentHumidityEl.textContent = "Humidity: " + response.data.main.humidity + "%";
                 currentWindEl.textContent = "Wind: " + response.data.wind.speed + " MPH";
                 
@@ -65,7 +65,7 @@
                             forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
                             forecastEls[i].append(forecastWeatherEl);
                             var forecastTempEl = document.createElement("p");
-                            forecastTempEl.textContent = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
+                            forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
                             forecastEls[i].append(forecastTempEl);
                             var forecastHumidityEl = document.createElement("p");
                             forecastHumidityEl.textContent = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
@@ -84,8 +84,7 @@
     })
 
     function k2f(K) {
-        return Math.floor((K - 273.15) * 1.8 + 32);
-    }
+        return Math.floor((K - 273.15) * 1.8 + 32);    }
 
     function renderSearchHistory() {
         historyEl.textContent = "";
